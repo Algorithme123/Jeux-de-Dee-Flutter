@@ -16,11 +16,28 @@ class _MyAppState extends State<MyApp> {
   int deeGauche =1;
   int deeDroit =1;
   
-  void rechargerDee(){
-    setState((){
-      deeGauche = Random().nextInt(6) +1;
-      deeDroit = Random().nextInt(6) +1;
+  void rechargerDee() {
+    setState(() {
+      deeGauche = Random().nextInt(6) + 1;
+      deeDroit = Random().nextInt(6) + 1;
     });
+  }
+    affichage_de(int numerodee){
+
+    return Expanded(
+      flex: 1,
+      child: TextButton(
+        onPressed: (){
+          print("Dee de Gauche");
+          print(deeGauche);
+          rechargerDee();
+        },
+        child: Image(
+          image: AssetImage('images/dice$deeGauche.png'),
+        ),
+      ),
+
+    );
 
   }
   @override
@@ -40,35 +57,9 @@ class _MyAppState extends State<MyApp> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              affichage_de(deeGauche),
+            affichage_de(deeDroit),
 
-              Expanded(
-                flex: 1,
-                child: TextButton(
-                  onPressed: (){
-                    print("Dee de Gauche");
-                    print(deeGauche);
-                    rechargerDee();
-                  },
-                  child: Image(
-                    image: AssetImage('images/dice$deeGauche.png'),
-                  ),
-                ),
-
-              ),
-              Expanded(
-                flex: 1,
-                child: TextButton(
-                  onPressed: (){
-                    print("Dee de droite");
-                    print(deeDroit);
-                    rechargerDee();
-                  },
-                  child: Image(
-                    image: AssetImage('images/dice$deeDroit.png'),
-                  ),
-                ),
-
-              ),
 
 
 
