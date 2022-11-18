@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
           rechargerDee();
         },
         child: Image(
-          image: AssetImage('images/dice$deeGauche.png'),
+          image: AssetImage('images/dice$numerodee.png'),
         ),
       ),
 
@@ -58,10 +58,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               affichage_de(deeGauche),
-            affichage_de(deeDroit),
-
-
-
+              affichage_de(deeDroit),
 
             ],
           ),
